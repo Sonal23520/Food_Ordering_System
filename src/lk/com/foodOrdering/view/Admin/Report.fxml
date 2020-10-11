@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="197.0" prefWidth="464.0" style="-fx-background-color: #2f3542;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.com.foodOrdering.Controller.admin.ReportController">
+   <children>
+      <ImageView fitHeight="197.0" fitWidth="467.0" layoutX="-2.0" opacity="0.26" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../asserts/Food_App.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnIncome" buttonType="RAISED" layoutX="23.0" layoutY="114.0" onAction="#income" prefHeight="45.0" prefWidth="135.0" stylesheets="@../../../../../css/Button.css" text="All Income" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="168.0" layoutY="14.0" text="Reports" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="40.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnOrderDetail" buttonType="RAISED" layoutX="306.0" layoutY="114.0" onAction="#orderDetail" prefHeight="45.0" prefWidth="135.0" stylesheets="@../../../../../css/Button.css" text="Order Detail" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
+      <ImageView fx:id="back" fitHeight="45.0" fitWidth="46.0" layoutX="415.0" layoutY="9.0" onMouseClicked="#home" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../asserts/icons8-home-page-64.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>

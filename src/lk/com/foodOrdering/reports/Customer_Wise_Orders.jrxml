@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2020-10-07T08:29:16 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Customer_Wise_Orders" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b516b812-8fb5-4643-8d2d-18952e2d744d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC"/>
+	<parameter name="custID" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT foody.orders.order_id,foody.menu.menu_name,foody.order_details.qty,foody.orders.order_status from foody.orders join order_details on foody.orders.order_id=foody.order_details.orderid join menu on foody.order_details.menuid=foody.menu.menu_id where foody.orders.customer_id=$P{custID}]]>
+	</queryString>
+	<field name="order_id" class="java.lang.Integer"/>
+	<field name="menu_name" class="java.lang.String"/>
+	<field name="qty" class="java.lang.Integer"/>
+	<field name="order_status" class="java.lang.String"/>
+	<group name="order_id">
+		<groupExpression><![CDATA[$F{order_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="197" y="10" width="160" height="40" uuid="577ab60e-54e0-47d3-9ceb-d7020cefb5b7"/>
+				<textElement>
+					<font fontName="Cambria" size="24"/>
+				</textElement>
+				<text><![CDATA[Order Report]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="419" y="0" width="106" height="40" uuid="6ab1e12a-97fd-4187-aa6e-a82c007241eb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="528" y="0" width="45" height="40" uuid="d0b782b5-e3d4-4e55-b2eb-3b138faeb709"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="-12" y="0" width="122" height="30" uuid="b418058c-af13-4c95-9bce-200d404cb797"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Order_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="0" width="122" height="30" uuid="ad406a85-46f2-4e6b-bd03-154cb8fbe2a7"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Menu_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="281" y="0" width="122" height="30" uuid="03942355-d83d-470c-8269-22267e3f74ed"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="419" y="0" width="122" height="30" uuid="bf8058ba-15b5-4b40-be2d-9832b3a72e9d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Order_status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="-11" y="4" width="100" height="30" uuid="de183b4c-f8ef-4985-a0fe-33c7b62a7ee9"/>
+				<textFieldExpression><![CDATA[$F{order_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="3" width="100" height="30" uuid="3f569b7e-cb2f-448b-ae9d-c2bfe91d1b9e"/>
+				<textFieldExpression><![CDATA[$F{menu_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="3" width="100" height="30" uuid="1c942380-cd56-4741-a3c1-5c47c41522fb"/>
+				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="419" y="3" width="100" height="30" uuid="c96ec8db-7b39-4097-bdd5-e3d925d747a6"/>
+				<textFieldExpression><![CDATA[$F{order_status}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

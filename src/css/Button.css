@@ -1,0 +1,22 @@
+
+.button{
+    -fx-background-color:    #079992;
+    /*-fx-background-radius: 50;*/
+    /*-fx-pref-height: 50;*/
+}
+
+.button2{
+    -fx-background-color:    #079992;
+    /*-fx-background-radius: 50;*/
+    -fx-pref-height: 50;
+}
+.button:hover{
+
+    -fx-background-color: #218c74;
+    /*-fx-opacity: 0.9;*/
+    /*-fx-text-fill: RED;*/
+
+}
+.ra{
+    -fx-background-radius: 0;
+}

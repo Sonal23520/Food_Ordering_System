@@ -1,0 +1,10 @@
+.menupane{
+    /*-fx-border-color: black;*/
+    -fx-background-radius: 6;
+    -fx-border-radius:  6;
+}
+
+.menuImage{
+    -fx-border-radius:  50;
+
+}

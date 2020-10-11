@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="302.0" prefWidth="542.0" style="-fx-background-color: #5D6D7E;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.com.foodOrdering.Controller.user.ConfirmedController">
+   <children>
+      <ImageView fitHeight="302.0" fitWidth="547.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../asserts/images.jpg" />
+         </image>
+         <effect>
+            <BoxBlur />
+         </effect>
+      </ImageView>
+      <AnchorPane layoutX="27.0" layoutY="35.0" prefHeight="233.0" prefWidth="489.0" style="-fx-background-color: #2c3e50;">
+         <children>
+            <Label layoutX="116.0" layoutY="35.0" prefHeight="34.0" prefWidth="258.0" text="Thank You for Ordering" textFill="WHITE">
+               <font>
+                  <Font name="Gill Sans MT" size="23.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="117.0" fitWidth="135.0" layoutX="176.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../asserts/checked.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="59.0" fitWidth="41.0" layoutX="7.0" layoutY="6.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../asserts/icons8-home-page-64.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>

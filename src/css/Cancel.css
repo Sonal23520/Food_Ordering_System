@@ -1,0 +1,8 @@
+
+
+.labal{
+    -fx-background-color: transparent;
+}
+.labal:hover{
+    -fx-background-color: #e74c3c;
+}

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2020-10-10T22:56:01 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf891a2c-a00d-4ff5-a580-0b393030fa8a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT foody.orders.order_id,customer_id,payment_id,order_status,payment_type,payment_status,foody.orders.time_stamp FROM foody.orders inner join foody.payment on foody.orders.order_id=foody.payment.order_id]]>
+	</queryString>
+	<field name="order_id" class="java.lang.Integer"/>
+	<field name="customer_id" class="java.lang.Integer"/>
+	<field name="payment_id" class="java.lang.Integer"/>
+	<field name="order_status" class="java.lang.String"/>
+	<field name="payment_type" class="java.lang.String"/>
+	<field name="payment_status" class="java.lang.String"/>
+	<field name="time_stamp" class="java.sql.Timestamp"/>
+	<group name="order_id">
+		<groupExpression><![CDATA[$F{order_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="171" y="6" width="212" height="50" uuid="4006d5f5-7f98-4698-8edd-769b144c0920"/>
+				<textElement>
+					<font fontName="Cambria" size="36"/>
+				</textElement>
+				<text><![CDATA[Order Details]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="50" width="110" height="30" uuid="0bcc7043-00c0-4cd0-82e9-dfbfdae7236f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="118" y="50" width="70" height="30" uuid="89c6967f-6372-490c-8312-2ddca316d3c8"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="3" width="60" height="30" uuid="25ef80ae-b5cd-4696-8d89-fa61b75828ac"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[order_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="57" y="4" width="70" height="30" uuid="4956792c-1027-42f1-9a11-7cc65914256c"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[cust_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="3" width="67" height="30" uuid="d86954f2-702c-490e-8828-52cb89162884"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[payment_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="196" y="3" width="91" height="30" uuid="1425354a-2f6c-416c-bc29-d7ab8debf9a2"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[order_status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="283" y="3" width="117" height="30" uuid="d20ab73b-a8d3-4abc-9672-ca9fa50f96f1"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[payment_type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="373" y="3" width="110" height="30" uuid="d12b757a-a20d-495d-bbc0-ab40a7d920c1"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[payment_status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="487" y="4" width="67" height="30" uuid="07dd8128-7baf-469c-a81c-613255d62874"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[time]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="60" height="30" uuid="8020c5b1-5418-470f-afa1-e0b63b41fd77"/>
+				<textFieldExpression><![CDATA[$F{order_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="1" width="73" height="30" uuid="1767aba2-6202-4d11-89b2-bb7b26da019f"/>
+				<textFieldExpression><![CDATA[$F{customer_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="0" width="73" height="30" uuid="c3252b7c-fab9-49fc-ab39-27d7fd6ac94a"/>
+				<textFieldExpression><![CDATA[$F{payment_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="195" y="1" width="81" height="30" uuid="c5d263f5-d3d3-49c1-ba14-62eff9fcfec9"/>
+				<textFieldExpression><![CDATA[$F{order_status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="295" y="1" width="60" height="30" uuid="c627e749-ac47-4db8-82bc-f9c767cb882c"/>
+				<textFieldExpression><![CDATA[$F{payment_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="373" y="1" width="100" height="30" uuid="c1bfe56e-e1ce-4b24-aac4-89c0ec5bf3e9"/>
+				<textFieldExpression><![CDATA[$F{payment_status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="481" y="0" width="100" height="30" uuid="5c74fbb0-4abd-4067-9e9a-c85c0ed9a428"/>
+				<textFieldExpression><![CDATA[$F{time_stamp}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

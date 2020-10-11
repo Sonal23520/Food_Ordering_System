@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2020-10-11T01:02:42 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PaymentBill" pageWidth="400" pageHeight="500" columnWidth="360" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="47d65a84-6f0d-4ad3-b1a6-34c70072e079">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="JDBC"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="oid" class="java.lang.Integer">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="total" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select orderid,menuid,menu_name,qty from foody.order_details inner join foody.menu on foody.order_details.menuid=foody.menu.menu_id where orderid=$P{oid}]]>
+	</queryString>
+	<field name="orderid" class="java.lang.Integer"/>
+	<field name="menuid" class="java.lang.Integer"/>
+	<field name="menu_name" class="java.lang.String"/>
+	<field name="qty" class="java.lang.Integer"/>
+	<variable name="orderid1" class="java.lang.Integer" resetType="Column" calculation="First">
+		<variableExpression><![CDATA[$F{orderid}]]></variableExpression>
+	</variable>
+	<variable name="orderid2" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{orderid}]]></variableExpression>
+	</variable>
+	<variable name="orderid3" class="java.lang.Integer" resetType="Column" calculation="System">
+		<variableExpression><![CDATA[$F{orderid}]]></variableExpression>
+	</variable>
+	<variable name="orderid4" class="java.lang.Integer" resetType="Column" calculation="Highest">
+		<variableExpression><![CDATA[$F{orderid}]]></variableExpression>
+	</variable>
+	<group name="orderid">
+		<groupExpression><![CDATA[$F{orderid}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="133" splitType="Stretch">
+			<staticText>
+				<reportElement x="130" y="0" width="103" height="52" uuid="ffa0e7c3-8f70-49a0-81f3-67d58c10853c"/>
+				<textElement>
+					<font fontName="Cambria" size="36"/>
+				</textElement>
+				<text><![CDATA[Foody]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="44" width="125" height="30" uuid="9dbbf84e-b90f-4ff4-b994-f7ca357d4771"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[order food online]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="60" width="211" height="20" uuid="f82a0b31-21d4-4209-afc5-04780948fef5"/>
+				<textElement>
+					<font fontName="Monospaced" size="14"/>
+				</textElement>
+				<text><![CDATA[galle road / kaluwalla]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="80" width="54" height="20" uuid="b62dcf86-799c-4851-9d77-f421a51b97b7"/>
+				<textElement>
+					<font fontName="Monospaced" size="14"/>
+				</textElement>
+				<text><![CDATA[galle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="75" y="100" width="210" height="20" uuid="bf9488f2-4d61-4096-8eed-ab51ce663b1d"/>
+				<textElement>
+					<font fontName="Monospaced" size="14"/>
+				</textElement>
+				<text><![CDATA[0778563881 / 0774306142]]></text>
+			</staticText>
+			<line>
+				<reportElement x="20" y="127" width="309" height="1" uuid="46db2d49-0f51-47e7-8b61-8d707eac2490"/>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="204" y="0" width="72" height="20" uuid="14b9461c-878f-43b3-9d1e-edcbd12f5a1e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Time :]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="254" y="0" width="122" height="20" uuid="afe4970f-de5e-4813-aad6-e2a25d344f2c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-8" y="-1" width="72" height="30" uuid="10be1943-b061-406b-8f58-8a223db02c55"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Order_id :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-10" y="40" width="100" height="30" uuid="ed8bea2e-eb43-405e-94a3-99fc0d281f0f"/>
+				<textElement>
+					<font size="16" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Menu _id]]></text>
+			</staticText>
+			<line>
+				<reportElement x="20" y="24" width="309" height="1" uuid="6ef8cbf0-8784-431e-93b7-7bac5ea3d8bb"/>
+			</line>
+			<staticText>
+				<reportElement x="114" y="40" width="100" height="30" uuid="2fb202ac-1816-4305-9366-e56e44f15203"/>
+				<textElement>
+					<font size="16" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Menu_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="40" width="100" height="30" uuid="5457d817-3598-4307-b1a8-530b79fe7dee"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-7" y="65" width="60" height="1" uuid="7ccd9845-30ed-4750-ac21-12cf54826f1a"/>
+			</line>
+			<line>
+				<reportElement x="112" y="64" width="82" height="1" uuid="ec47d529-0390-4dc6-85ec-4b98f49aaa64"/>
+			</line>
+			<line>
+				<reportElement x="239" y="63" width="44" height="1" uuid="0f58dd3b-cc48-4aeb-a3b4-e3842137915d"/>
+			</line>
+			<textField>
+				<reportElement x="64" y="-1" width="100" height="21" uuid="a799a718-f007-48ba-a5a6-5a7226db72fc"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{oid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="13" y="1" width="77" height="25" uuid="c45ffdd4-6192-46dc-add3-857bbde4893c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{menuid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="0" width="112" height="27" uuid="c5357599-8b8a-41af-bad6-2b48cdcd5f06"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{menu_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="0" width="100" height="27" uuid="e3150163-a3fb-4cde-a39e-1c7134a973c1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="30" uuid="265fcf14-2dad-4a7d-a3a1-58fadff1398f"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Grand Total :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="0" width="76" height="30" uuid="18c9840a-712e-41d0-9fd7-918b9f400fa8"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="200" y="23" width="156" height="1" uuid="e1f5a1b5-6322-4167-a0cf-198112e89d4f"/>
+			</line>
+			<line>
+				<reportElement x="200" y="27" width="156" height="1" uuid="b4b4c2e7-fb22-4d23-b85f-4e25c7e9e583"/>
+			</line>
+			<staticText>
+				<reportElement x="95" y="40" width="173" height="30" uuid="de9bb547-234c-414c-8edc-b0fa32828ed3"/>
+				<textElement>
+					<font fontName="Monospaced" size="12"/>
+				</textElement>
+				<text><![CDATA[Thank you for your order]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,13 @@
+
+.paneHover:hover{
+    -fx-background-color: rgba(139,255,149,0.9);
+}
+
+.paneHover:pressed{
+    -fx-background-color: rgba(255,95,115,0.9);
+}
+.paneHover{
+    -fx-border-color: black;
+    -fx-background-radius: 6;
+    -fx-border-radius:  6;
+}

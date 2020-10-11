@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="649.0" style="-fx-background-color: #434350;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.com.foodOrdering.Controller.user.WelcomeController">
+   <children>
+      <ImageView fitHeight="428.0" fitWidth="670.0" layoutX="-12.0" layoutY="-8.0" opacity="0.2" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../asserts/Food_App.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="209.0" layoutY="20.0" prefHeight="63.0" prefWidth="236.0" text="WELCOME" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="44.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="68.0" layoutY="297.0" onAction="#signupScreen" prefHeight="35.0" prefWidth="204.0" stylesheets="@../../../../../css/Button.css" text="SignUp" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="377.0" layoutY="297.0" onAction="#loginScreen" prefHeight="35.0" prefWidth="204.0" stylesheets="@../../../../../css/Button.css" text="Login" textFill="WHITE" />
+      <Label layoutX="227.0" layoutY="74.0" opacity="0.7" prefHeight="35.0" prefWidth="194.0" text="Order Food Online" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Lucida Sans Regular" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="377.0" layoutY="270.0" prefHeight="17.0" prefWidth="158.0" text="Already registered ? Login" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="270.0" prefHeight="17.0" prefWidth="139.0" text="New User? SignUp" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="164.0" fitWidth="148.0" layoutX="239.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../asserts/fast_food_397248.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="67.0" layoutX="443.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../asserts/cupcake.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lblAdmin" fitHeight="41.0" fitWidth="40.0" layoutX="14.0" layoutY="7.0" onMouseClicked="#loadAdminLogin" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../asserts/Admin.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

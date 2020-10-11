@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="620.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.com.foodOrdering.Controller.admin.LoginController">
+   <children>
+      <ImageView fitHeight="179.0" fitWidth="177.0" layoutX="24.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../asserts/tacos.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="419.0" fitWidth="620.0" opacity="0.24" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../asserts/messy-pizza-on-a-black-table.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="24.0" layoutY="58.0" prefHeight="343.0" prefWidth="282.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="34.0" layoutY="41.0" prefHeight="33.0" prefWidth="99.0" text="Login " textFill="#ffa10f">
+               <font>
+                  <Font name="SansSerif Bold" size="23.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../asserts/icons8-login-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <JFXTextField fx:id="idtxt" focusColor="#ff3377" labelFloat="true" layoutX="43.0" layoutY="114.0" prefHeight="25.0" prefWidth="202.0" promptText="User Id" unFocusColor="#ffa10f" />
+            <JFXPasswordField fx:id="passtxt" focusColor="#ff3377" labelFloat="true" layoutX="43.0" layoutY="195.0" prefHeight="25.0" prefWidth="202.0" promptText="Password" unFocusColor="#ffa10f" />
+            <JFXButton buttonType="RAISED" layoutX="83.0" layoutY="264.0" onAction="#Login" prefHeight="25.0" prefWidth="117.0" style="-fx-background-color: #ffa10f;" text="Login" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="201.0" layoutY="10.0" prefHeight="38.0" prefWidth="250.0" text="Restaurant Login" textFill="WHITE">
+         <font>
+            <Font name="Segoe Print" size="28.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="434.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../asserts/utensils-clipart-head-chef-9.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="backToHome" fitHeight="47.0" fitWidth="56.0" layoutX="561.0" layoutY="13.0" onMouseClicked="#backToHome" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../asserts/icons8-home-page-64.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="556.0" layoutY="382.0" onAction="#exitScreen" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #ED4C67;" text="Exit" textFill="WHITE" />
+   </children>
+</AnchorPane>

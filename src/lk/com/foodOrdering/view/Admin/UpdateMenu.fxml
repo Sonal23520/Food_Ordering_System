@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="637.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.com.foodOrdering.Controller.admin.UpdateMenuController">
+   <children>
+      <JFXButton layoutX="14.0" layoutY="116.0" onAction="#getAll" prefHeight="25.0" prefWidth="99.0" stylesheets="@../../../../../css/Button.css" text="Refresh Table" textFill="WHITE" />
+      <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="429.0" layoutY="115.0" prefHeight="25.0" prefWidth="242.0" promptText="Search Employe" />
+      <JFXButton fx:id="btnSearch" layoutX="676.0" layoutY="113.0" onAction="#searchOnAction" prefHeight="16.0" prefWidth="88.0" stylesheets="@../../../../../css/Button.css" text="Search" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../asserts/searchh.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="139.0" styleClass="pane" stylesheets="@../../../../../css/pane.css">
+         <children>
+            <Label layoutX="14.0" layoutY="6.0" text="All Items :">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblAllMenu" layoutX="99.0" layoutY="7.0" text="0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table" layoutX="14.0" layoutY="150.0" prefHeight="476.0" prefWidth="753.0" stylesheets="@../../../../../css/table.css">
+         <columns>
+            <TableColumn fx:id="colmenuid" prefWidth="124.0" text="Menu_ID" />
+            <TableColumn fx:id="colmenuname" prefWidth="301.0" text="Menu_Name" />
+            <TableColumn fx:id="colprice" prefWidth="179.0" text="Price" />
+            <TableColumn fx:id="coloperator" prefWidth="144.0" text="Operator" />
+         </columns>
+      </TableView>
+      <TitledPane expanded="false" layoutX="14.0" layoutY="58.0" nodeOrientation="LEFT_TO_RIGHT" stylesheets="@../../../../../css/TitlePane_2.css" text="Update Menu">
+         <content>
+            <AnchorPane prefHeight="292.0" prefWidth="556.0" styleClass="pane" stylesheets="@../../../../../css/pane.css">
+               <children>
+                  <JFXTextField fx:id="textlname" focusColor="#f24541" labelFloat="true" layoutX="55.0" layoutY="161.0" prefHeight="25.0" prefWidth="210.0" promptText="Menu Name" unFocusColor="#f0ab41" />
+                  <JFXTextField fx:id="tetxprice" focusColor="#f24541" labelFloat="true" layoutX="55.0" layoutY="219.0" prefHeight="25.0" prefWidth="210.0" promptText="Price" unFocusColor="#f0ab41" />
+                  <Label layoutX="170.0" layoutY="34.0" prefHeight="39.0" prefWidth="191.0" text="Update Menu" textFill="#f7a31e">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="208.0" layoutY="259.0" onAction="#updateOnAction" prefHeight="25.0" prefWidth="130.0" stylesheets="@../../../../../css/Button.css" text="Update" textFill="WHITE" />
+                  <JFXTextField fx:id="txtMID" focusColor="#f24541" labelFloat="true" layoutX="55.0" layoutY="107.0" prefHeight="25.0" prefWidth="141.0" promptText="Menu ID" unFocusColor="#f0ab41" />
+                  <JFXButton fx:id="btnset" layoutX="207.0" layoutY="107.0" onAction="#setOnAction" prefHeight="25.0" prefWidth="58.0" stylesheets="@../../../../../css/Button.css" text="Set" textFill="WHITE" />
+                  <JFXButton fx:id="btninsert" layoutX="403.0" layoutY="247.0" onAction="#InsertOnAction" prefHeight="25.0" prefWidth="88.0" stylesheets="@../../../../../css/Button.css" text="Insert Image" textFill="WHITE" />
+                  <AnchorPane layoutX="352.0" layoutY="63.0" prefHeight="169.0" prefWidth="174.0" styleClass="pane" stylesheets="@../../../../../css/pane.css">
+                     <children>
+                        <ImageView fitHeight="169.0" fitWidth="186.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="root" prefHeight="637.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.com.foodOrdering.Controller.admin.OrderDetailFormController">
+   <children>
+      <JFXButton layoutX="14.0" layoutY="28.0" onAction="#getAll" prefHeight="25.0" prefWidth="99.0" stylesheets="@../../../../../css/Button.css" text="Refresh Table" textFill="WHITE" />
+      <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="429.0" layoutY="27.0" prefHeight="25.0" prefWidth="242.0" promptText="Search Employe" />
+      <JFXButton fx:id="btnSearch" layoutX="676.0" layoutY="25.0" onAction="#searchOnAction" prefHeight="16.0" prefWidth="88.0" stylesheets="@../../../../../css/Button.css" text="Search" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../asserts/searchh.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TableView fx:id="table" layoutX="14.0" layoutY="85.0" prefHeight="541.0" prefWidth="753.0" stylesheets="@../../../../../css/table.css">
+         <columns>
+            <TableColumn fx:id="colorderid" prefWidth="124.0" text="Order_ID" />
+            <TableColumn fx:id="colcustomerid" prefWidth="301.0" text="Customer_ID" />
+            <TableColumn fx:id="colorderstatus" prefWidth="179.0" text="Order_Status" />
+            <TableColumn fx:id="coltime" prefWidth="144.0" text="Time_Stamp" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
